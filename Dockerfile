@@ -1,5 +1,5 @@
 # ---------- ETAPA 1: BUILD ----------
-FROM maven:3.9.9-amazoncorretto-21 AS builder
+FROM maven:3.9.9-eclipse-temurin-21 AS builder
 
 WORKDIR /app
 
@@ -12,7 +12,7 @@ RUN mvn clean package -DskipTests
 
 
 # ---------- ETAPA 2: RUNTIME ----------
-FROM eclipse-amazoncorretto-21
+FROM eclipse-temurin:21-jammy
 
 WORKDIR /app
 
